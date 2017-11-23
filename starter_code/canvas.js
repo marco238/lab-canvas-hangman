@@ -92,10 +92,11 @@ var canvas;
 
 document.getElementById("start-game-button").onclick = function() {
   hangman = new Hangman();
-  canvas = new HangmanCanvas("Hola");
+  hangman.secretWord = hangman._getWord();
 
-  hangman._getWord();
-  canvas._drawHangman();
+  canvas = new HangmanCanvas(hangman.secretWord);
+  canvas._createBoard();
+  canvas._drawLines();
 };
 
 document.onkeydown = function(e) {

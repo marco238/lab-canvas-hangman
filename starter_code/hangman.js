@@ -11,7 +11,7 @@ Hangman.prototype._getWord = function() {
   return this.words[Math.floor(Math.random() * this.words.length)];
 };
 Hangman.prototype._checkIfLetter = function(keyCode) {
-  return keyCode >= 65 && keyCode <= 90 ? true : false;
+  return keyCode >= 65 && keyCode  <= 90 || keyCode >= 97 && keyCode  <= 122  ? true : false;
 };
 Hangman.prototype._checkClickedLetters = function(key) {
   return !this.letters.includes(key);
