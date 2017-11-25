@@ -32,6 +32,9 @@ Hangman.prototype._checkWinner = function() {
 };
 document.getElementById("start-game-button").onclick = function(){
   hangman = new Hangman();
-};
-document.onkeydown = function(e) {
+  hangman.secretWord = hangman._getWord();
+
+  canvas = new HangmanCanvas(hangman.secretWord);
+  canvas._createBoard();
+  canvas._drawLines();
 };

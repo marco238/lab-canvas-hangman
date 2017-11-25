@@ -87,19 +87,14 @@ HangmanCanvas.prototype._winner = function() {
   img.src = './images/awesome.png';
 };
 
-var hangman;
-var canvas;
-
-document.getElementById("start-game-button").onclick = function() {
-  hangman = new Hangman();
-  hangman.secretWord = hangman._getWord();
-
-  canvas = new HangmanCanvas(hangman.secretWord);
-  canvas._createBoard();
-  canvas._drawLines();
-};
+// var canvas;
 
 document.onkeydown = function(e) {
-  hangman._checkIfLetter(e);
-  canvas._writeCorrectLetter(e);
+  console.log(e);
+  if(hangman._checkIfLetter(e.keyCode)) {
+    console.log('es una letra');
+    canvas._writeCorrectLetter();
+  } else {
+
+  }
 };
